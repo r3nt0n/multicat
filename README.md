@@ -3,8 +3,6 @@
 ![[Python 3](https://github.com/r3nt0n)](http://img.shields.io/badge/python-3-blue.svg)
 ![[Version 0.1.1](https://github.com/r3nt0n)](http://img.shields.io/badge/version-0.1.1-orange.svg)
 
-
-<br />
 <div align="center">
   <h3 align="center">multicat</h3>
   <p align="center">
