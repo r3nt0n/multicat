@@ -3,7 +3,7 @@
 # https://github.com/r3nt0n/multicat
 # multicat - multithread reverse shell listener
 
-import socket, threading, time, sys, argparse
+import socket, threading, time, argparse, os
 
 name = 'multicat'
 desc = 'Multithread reverse shell listener'
@@ -80,7 +80,6 @@ class ThreadedServer(object):
                 except UnicodeDecodeError:
                     print(output.decode('latin-1'), end='')
 
-                #command = input('') + '\n'
                 command = input('')
                 if command.upper() in ('HELP', '?'):
                     print(f'\n{color.BOLD}COMMAND\t\tDESCRIPTION{color.END}')
@@ -88,7 +87,6 @@ class ThreadedServer(object):
                     print('STOP\t\tStop interacting with the current session')
                     print('CLOSE \t\tClose the current connection')
                     command = ''
-                #if command.rstrip('\n').upper() == 'STOP':
                 if command.upper() == 'STOP':
                     if input(f'\n{color.ORANGE}[?]{color.END} Do you want to {color.ORANGE}stop{color.END} this session? [y/N] ').lower() == 'y':
                         print()
@@ -136,8 +134,11 @@ class ThreadedServer(object):
                     print('SESSIONS\tList established sessions')
                     print('START <id>\tInteract with a client')
                     print('CLOSE <id>\tClose an specific connection')
+                    print('EXIT / QUIT\tExit the entire application')
                     print()
-                #elif user_input.upper().startswith('HELP'):
+
+                elif user_input.upper() in ('EXIT', 'QUIT'):
+                    os._exit(0)
 
                 elif user_input.upper().startswith('SESSIONS'):
                     print(f'\n{color.BOLD}ID\tRemote address\tRemote port{color.END}')
@@ -179,22 +180,15 @@ class ThreadedServer(object):
             thread.start()
         return
 
-if __name__ == "__main__":
 
+def main():
     print(f'\n{name} by r3nt0n - https://github.com/r3nt0n/multicat\n')
-    #
-    # if len(sys.argv) == 2:
-    #     port_num = sys.argv[1]
-    #     try:
-    #         port_num = int(port_num)
-    #         if port_num < 0:
-    #             raise ValueError
-    #     except ValueError:
-    #         print(f'{color.RED}[!]{color.END} ERROR: Invalid listening port')
-    #         sys.exit(1)
-        #ThreadedServer('', port_num).run()
     port, max_clients, timeout = process_args()
     ThreadedServer('', port, max_clients, timeout).run()
-    # else:
-    #     print(f'Usage:   {sys.argv[0]} <listening-port>')
+
+
+if __name__ == "__main__":
+    main()
+
+
 

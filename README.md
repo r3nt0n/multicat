@@ -21,19 +21,32 @@ Sometimes you have to spread the same payload to multiple targets and don't know
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+<!-- INSTALLATION -->
+## Installation
+```commandline
+pip install multicat
+```
+
 <!-- USAGE EXAMPLES -->
 ## Usage
-```commandline
 
-Usage: mc.py [-h] [-p] [-m] [-t]
+To start listening on the port of your choice:
+```commandline
+mc -p 1234
+```
+
+### Arguments
+
+```commandline
+Usage: mc [-h] [-p] [-m] [-t]
 
 -h, --help           show this help message and exit
 -p , --port          port to listen (default: 28000)
 -m , --max-clients   max number of new clients to queue before establish connection (default: 5)
 -t , --timeout       connections timeout (default: 10)
-
 ```
 
+### Commands
 Available commands in general menu context:
 ```commandline
 COMMAND         DESCRIPTION
@@ -42,6 +55,7 @@ HELP            List available commands
 SESSIONS        List established sessions
 START <id>      Interact with a client
 CLOSE <id>      Close an specific connection
+EXIT / QUIT     Exit the entire application
 ```
 
 Available commands in session context:
