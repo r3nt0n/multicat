@@ -15,7 +15,7 @@
 <p align="center"><img src="https://github.com/r3nt0n/multicat/blob/master/img/mc.gif" /></p>  
 
 ## Use cases
-Sometimes you have to spread the same payload to multiple targets and don't know how many clients will try to connect back. Multicat allow to setup a **listener capable of handling multiple connections on the same port** and **interact with each client on a separate session**. This server is client agnostic: **compatible with any reverse shell that would work with a netcat listener**.
+Sometimes you have to spread the same payload to multiple targets and don't know how many clients will try to connect back. Multicat setup a **listener capable of handling multiple connections on the same port** and **interact with each client on a separate session**. This server is client agnostic: **compatible with any reverse shell that would work with a netcat listener**.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
