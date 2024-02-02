@@ -134,6 +134,7 @@ class ThreadedServer(object):
                     print('SESSIONS\tList established sessions')
                     print('START <id>\tInteract with a client')
                     print('CLOSE <id>\tClose an specific connection')
+                    print('CLEAR\tClear the terminal')
                     print('EXIT / QUIT\tExit the entire application')
                     print()
 
