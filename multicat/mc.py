@@ -137,6 +137,9 @@ class ThreadedServer(object):
                     print('EXIT / QUIT\tExit the entire application')
                     print()
 
+                elif user_input.upper() == 'CLEAR':
+                    os.system('clear')
+                
                 elif user_input.upper() in ('EXIT', 'QUIT'):
                     os._exit(0)
 
