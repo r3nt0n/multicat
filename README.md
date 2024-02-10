@@ -56,6 +56,7 @@ SESSIONS        List established sessions
 START <id>      Interact with a client
 CLOSE <id>      Close an specific connection
 EXIT / QUIT     Exit the entire application
+CLEAR           Clear the console
 ```
 
 Available commands in session context:
